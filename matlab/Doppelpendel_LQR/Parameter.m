@@ -4,21 +4,21 @@
 %Abtastzeit
 parDP.Ta  = 1e-3;
 %Parameter
-parDP.l1=0.419; %L‰nge inneres Pendel [m]
-parDP.l2=0.484; %L‰nge ‰uﬂeres Pendel [m]
+parDP.l1=0.419; %L?nge inneres Pendel [m]
+parDP.l2=0.484; %L?nge ?u?eres Pendel [m]
 parDP.m1=0.9363; %Masse inneres Pendel [kg]
-parDP.m2=0.5505; %Masse ‰uﬂeres Pendel [kg]
-parDP.a1=0.2687; %Abstand Aufh‰ngung zu Schwerpunkt inneres Pendel [m]
-parDP.a2=0.2256; %Abstand Aufh‰ngung zu Schwerpunkt ‰uﬂeres Pendel [m]
-parDP.J1=0.0243; %Tr‰gheitsmoment inneres Pendel [Nms^2]
-parDP.J2=0.0183; %Tr‰gheitsmoment ‰uﬂeres Pendel [Nms^2]
-parDP.d1=0.0042; %D‰mpfungskonstante inneres Pendel [Nms]
-parDP.d2=0.0003; %D‰mpfungskonstante ‰uﬂeres Pendel [Nms]
+parDP.m2=0.5505; %Masse ?u?eres Pendel [kg]
+parDP.a1=0.2687; %Abstand Aufh?ngung zu Schwerpunkt inneres Pendel [m]
+parDP.a2=0.2256; %Abstand Aufh?ngung zu Schwerpunkt ?u?eres Pendel [m]
+parDP.J1=0.0243; %Tr?gheitsmoment inneres Pendel [Nms^2]
+parDP.J2=0.0183; %Tr?gheitsmoment ?u?eres Pendel [Nms^2]
+parDP.d1=0.0042; %D?mpfungskonstante inneres Pendel [Nms]
+parDP.d2=0.0003; %D?mpfungskonstante ?u?eres Pendel [Nms]
 parDP.m=0.2;   %Masse Wagen [m]
 parDP.g=9.81;   %Gravitationskonstante [m/s^2]
 parDP.xlinks = -0.7;
 parDP.xrechts = 0.7;
-%% Inkrementalgeberausflˆsungen
+%% Inkrementalgeberausfl?sungen
 Phiquantisierung = 1/2048*2*pi/4; %[rad/Flanken]
 Wegquantisierung = 6.8359e-005; %[m/Flanken]
 %% Filter zur Positionsdifferentiation
@@ -64,24 +64,24 @@ else
     parDP.wR=0;
     parDP.uR=0;
 end
-%% Gewichtung Regler
-parLQR.Ta = parDP.Ta;
-if obere_untere_Ruhelage==1 %obere
-    
-    %LQR-Gewichtung disk
-    %parLQR.QEd=...
-    %parLQR.REd=...
-    %parLQR.NEd=...
-
-else %untere
-     
-    %LQR-Gewichtung disk
-    %parLQR.QEd=...
-    %parLQR.REd=...
-    %parLQR.NEd=...
-               
-end
-
+% %% Gewichtung Regler
+% parLQR.Ta = parDP.Ta;
+% if obere_untere_Ruhelage==1 %obere
+%     
+%     %LQR-Gewichtung disk
+%     %parLQR.QEd=...
+%     %parLQR.REd=...
+%     %parLQR.NEd=...
+% 
+% else %untere
+%      
+%     %LQR-Gewichtung disk
+%     %parLQR.QEd=...
+%     %parLQR.REd=...
+%     %parLQR.NEd=...
+%                
+% end
+Tuning_Parameter;
 
 
 
