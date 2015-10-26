@@ -13,7 +13,7 @@ parDP.phi10_error = 0*0.1;
 Quantisierung = 0;
 %Kalman-Filter ein/aus (1-2)
 Kalman_Filter = 2;
-%Beobachter/Modell  Rückführung ein/aus (0-1)
+%Beobachter/Modell  Rï¿½ckfï¿½hrung ein/aus (0-1)
 Beobachter_Rueckfuehrung=0;
 
 %Parameter laden
@@ -32,7 +32,7 @@ run Tuning_Parameter
 %LQR-Entwurf
 [parLQR] = LQR_Entwurf(sysd,parLQR);
 %Kalman-Filter-Entwurf
-[parKAL] = Kalman_Entwurf(sysk,sysd,parKAL);
+%[parKAL] = Kalman_Entwurf(sysk,sysd,parKAL);
 %Vorsteuerungsentwurf
 [parFF] = Vorsteuerung_Entwurf(sysk,parFF);
 %Vorsteuerung Plotten
@@ -41,7 +41,7 @@ if(0)
 end
 
 if(1)
-    disp('Simulations läuft...')
-    open('Doppelpendel_LQG.mdl')
-    sim('Doppelpendel_LQG.mdl')
+    disp('Simulations lÃ¤uft...')
+    open('Doppelpendel_LQG.slx')
+    sim('Doppelpendel_LQG.slx')
 end

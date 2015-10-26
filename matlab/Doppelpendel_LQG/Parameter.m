@@ -4,21 +4,21 @@
 %Abtastzeit
 parDP.Ta  = 1e-3;
 %Parameter
-parDP.l1=0.419; %Länge inneres Pendel [m]
-parDP.l2=0.484; %Länge äußeres Pendel [m]
+parDP.l1=0.419; %Lï¿½nge inneres Pendel [m]
+parDP.l2=0.484; %Lï¿½nge ï¿½uï¿½eres Pendel [m]
 parDP.m1=0.9363; %Masse inneres Pendel [kg]
-parDP.m2=0.5505; %Masse äußeres Pendel [kg]
-parDP.a1=0.2687; %Abstand Aufhängung zu Schwerpunkt inneres Pendel [m]
-parDP.a2=0.2256; %Abstand Aufhängung zu Schwerpunkt äußeres Pendel [m]
-parDP.J1=0.0243; %Trägheitsmoment inneres Pendel [Nms^2]
-parDP.J2=0.0183; %Trägheitsmoment äußeres Pendel [Nms^2]
-parDP.d1=0.0042; %Dämpfungskonstante inneres Pendel [Nms]
-parDP.d2=0.0003; %Dämpfungskonstante äußeres Pendel [Nms]
+parDP.m2=0.5505; %Masse ï¿½uï¿½eres Pendel [kg]
+parDP.a1=0.2687; %Abstand Aufhï¿½ngung zu Schwerpunkt inneres Pendel [m]
+parDP.a2=0.2256; %Abstand Aufhï¿½ngung zu Schwerpunkt ï¿½uï¿½eres Pendel [m]
+parDP.J1=0.0243; %Trï¿½gheitsmoment inneres Pendel [Nms^2]
+parDP.J2=0.0183; %Trï¿½gheitsmoment ï¿½uï¿½eres Pendel [Nms^2]
+parDP.d1=0.0042; %Dï¿½mpfungskonstante inneres Pendel [Nms]
+parDP.d2=0.0003; %Dï¿½mpfungskonstante ï¿½uï¿½eres Pendel [Nms]
 parDP.m=0.2;   %Masse Wagen [m]
 parDP.g=9.81;   %Gravitationskonstante [m/s^2]
 parDP.xlinks = -0.7;
 parDP.xrechts = 0.7;
-%% Inkrementalgeberausflösungen
+%% Inkrementalgeberausflï¿½sungen
 Phiquantisierung = 1/2048*2*pi/4; %[rad/Flanken]
 Wegquantisierung = 6.8359e-005; %[m/Flanken]
 %% Filter zur Positionsdifferentiation
@@ -67,20 +67,20 @@ end
 %% Parameter Vorsteuerung
 % Parameter Solltrajektorie
 parFF.Ta = parDP.Ta;
-parFF.beta7 = 
-parFF.beta8 = 
-parFF.beta9 = 
-parFF.beta10 = 
-parFF.beta11 = 
-parFF.beta12 = 
-parFF.beta13 = 
-%Übergangszeit
+parFF.beta7 = 1716;
+parFF.beta8 = -9009;
+parFF.beta9 = 20020;
+parFF.beta10 = -24024;
+parFF.beta11 = 16380;
+parFF.beta12 = -6006;
+parFF.beta13 = 924;
+%ï¿½bergangszeit
 parFF.Te=3;
 %Anfangs- und Endwert
 parFF.x0=0;
 parFF.xT=0.1;
 
-
+Tuning_Parameter
 
 
 

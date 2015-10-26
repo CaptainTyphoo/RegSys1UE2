@@ -1,4 +1,5 @@
-%% A2.3 Stabilisierung
+%% A 2.5
+
 clear all;
 close all; 
 clc;
@@ -10,3 +11,15 @@ Parameter;
 [sysk, sysd]=DP_System(parDP);
 parLQR = LQR_Entwurf(sysd,parLQR);
 
+rank(ctrb(sysk))
+
+%% A 2.6 Vorsteuerungsentwurf
+
+parFF = {};
+[parFF] = Vorsteuerung_Entwurf(sysk,parFF)
+
+
+
+%% A 2.7
+
+Vorsteuerung_Plotten(parFF)

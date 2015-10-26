@@ -3,14 +3,12 @@ clear all;
 close all; 
 clc;
 
-setparDP;
+obere_untere_Ruhelage = 0; % Untere Ruhelage
+parDP.phi10_error = 0; % Anfangsstörung
 
-parDP.xR=zeros(1,6);
-parDP.uR=0;
-parDP.Ta=1e-3;
+Parameter;
 
 %% Untere Ruhelage
-parDP.xR=[pi 0 pi 0 0 0];
 [sysk, sysd]=DP_System(parDP);
 
 %%Eigenwerte und Nullstellen des linearisierten Systems
@@ -21,7 +19,13 @@ zuk = zero(sysk);
 pud = pole(sysd); % es existieren Nullstelen mit |z| >1 -> nicht phasenminimal
 zud = zero(sysd);
 
+%% Erreichbarkeit
+RR_u = ctrb(sysd);
+rank(RR_u)
+
 %% Obere Ruhelage
+obere_untere_Ruhelage = 1; % Obere Ruhelage
+Parameter;
 [sysk, sysd]=DP_System(parDP);
 
 %Eigenwerte und Nullstellen des linearisierten Systems
@@ -34,8 +38,7 @@ zok = zero(sysk); % es existieren Nullstelen mit Re(s)>0 -> nicht phasenminimal
 pod = pole(sysd);
 zod = zero(sysd); % es existieren Nullstelen mit |z| >1 -> nicht phasenminimal
 
-RR_u = ctrb(sysd);
-rank(RR_u)
+
 
 %% Erreichbarkeit 
 RR_o = ctrb(sysd);
