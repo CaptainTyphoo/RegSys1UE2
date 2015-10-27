@@ -80,7 +80,6 @@ parFF.Te=3;
 parFF.x0=0;
 parFF.xT=0.1;
 
-Tuning_Parameter
 
 
 

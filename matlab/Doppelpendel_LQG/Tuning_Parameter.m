@@ -34,17 +34,29 @@ else %untere
 end
 
 %% Gewichtung Beobachter
+
+    a1 = 1;
+    a2 = 1;
+    a3 = 1;
+    a4 = 1;
+    Q = diag([a1 a2 a1 a2 a3 a4]);
+    
+    gamma1 = 1;
+    gamma2 = 1;
+    R = diag([gamma1 gamma2]);
+    
+    
 if obere_untere_Ruhelage==1 %obere
         
     %Kovarianzmatrizen
-    %parKAL.Qn=...
-    %parKAL.Rn=...
+    parKAL.Qn=Q;
+    parKAL.Rn=R;
 
 else %untere
          
     %Kovarianzmatrizen
-    %parKAL.Qn=...
-    %parKAL.Rn=...
+    parKAL.Qn=Q;
+    parKAL.Rn=R;
            
 end
 

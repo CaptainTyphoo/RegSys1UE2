@@ -1,9 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LoadParameter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-clear all
-warning off
-clc
+clear all;
+warning off;
+clc;
+
+simulation=1;       % 1 für Simualtion starten
+vorst_plotten = 0;  % 1 für Vorsteuerung plottem
 
 % Obere oder untere Ruhelage (1-0)
 obere_untere_Ruhelage = 0;
@@ -31,17 +34,29 @@ Nullstellen=zero(sysk)
 run Tuning_Parameter
 %LQR-Entwurf
 [parLQR] = LQR_Entwurf(sysd,parLQR);
+
 %Kalman-Filter-Entwurf
-%[parKAL] = Kalman_Entwurf(sysk,sysd,parKAL);
+
+% C anpassen
+cc=zeros(2,6);
+cc(1,1)=1;
+cc(2,5)=1;
+sysk.c=cc;
+
+
+[parKAL] = Kalman_Entwurf(sysk,sysd,parKAL);
 %Vorsteuerungsentwurf
 [parFF] = Vorsteuerung_Entwurf(sysk,parFF);
+
 %Vorsteuerung Plotten
-if(0)
+if(vorst_plotten==1)
     Vorsteuerung_Plotten(parFF)
 end
 
-if(1)
+if(simulation==1)
     disp('Simulations lÃ¤uft...')
     open('Doppelpendel_LQG.slx')
     sim('Doppelpendel_LQG.slx')
 end
+
+

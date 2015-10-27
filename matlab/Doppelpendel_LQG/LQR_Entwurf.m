@@ -8,4 +8,8 @@ gamma_rI = [zeros(6,1);1];
 [K,S,e] = dlqr(phi_I,gamma_I,parLQR.QEd,parLQR.REd,parLQR.NEd);
 parLQR.kx = -K(1:6);
 parLQR.kI = -K(7);
+
+%Ausgabe von Dynamimatrix weil gewünsht
+parLQR.phi_I=phi_I;
+parLQR.phi_I
 end

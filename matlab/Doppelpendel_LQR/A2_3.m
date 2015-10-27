@@ -4,10 +4,10 @@ clear all;
 close all;
 clc;
 
-simulation=1;  %Wenn 1 dann wird Simluation auch gleich gestartet
+simulation=0;  %Wenn 1 dann wird Simluation auch gleich gestartet
 
 % Animation Einstellungen
-animation_on=1;
+animation_on=0;
 trajektorie_on=0;
 video_on=1;
 pfad='video.avi';
