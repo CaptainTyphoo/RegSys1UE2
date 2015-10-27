@@ -9,5 +9,5 @@
 * [Wie man seine Emailadresse geheim hält](https://help.github.com/articles/keeping-your-email-address-private/)
 * [Wie man sein Passwort chachen kann](https://help.github.com/articles/caching-your-github-password-in-git/)
 * [Git Buch (Kapitel 2 ist am wichtigsten)](https://git-scm.com/book/en/v2)
-
+* [Merge conflicts](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/)
 
