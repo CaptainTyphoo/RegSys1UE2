@@ -64,24 +64,6 @@ else
     parDP.wR=0;
     parDP.uR=0;
 end
-% %% Gewichtung Regler
-% parLQR.Ta = parDP.Ta;
-% if obere_untere_Ruhelage==1 %obere
-%     
-%     %LQR-Gewichtung disk
-%     %parLQR.QEd=...
-%     %parLQR.REd=...
-%     %parLQR.NEd=...
-% 
-% else %untere
-%      
-%     %LQR-Gewichtung disk
-%     %parLQR.QEd=...
-%     %parLQR.REd=...
-%     %parLQR.NEd=...
-%                
-% end
-Tuning_Parameter;
 
 
 

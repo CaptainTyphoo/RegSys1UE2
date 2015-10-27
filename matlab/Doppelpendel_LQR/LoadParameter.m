@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LoadParameter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-clear all
+%clear all
 warning off
 clc
 
@@ -28,8 +28,8 @@ run Tuning_Parameter
 %LQR-Entwurf
 [parLQR] = LQR_Entwurf(sysd,parLQR);
 
-if(0)
+if(simulation==1)
     disp('Simulations läuft...')
-    open('Doppelpendel_LQR.mdl')
-    sim('Doppelpendel_LQR.mdl')
+    open('Doppelpendel_LQR.slx')
+    sim('Doppelpendel_LQR.slx')
 end

@@ -16,7 +16,7 @@ rank(ctrb(sysk))
 %% A 2.6 Vorsteuerungsentwurf
 
 parFF = {};
-[parFF] = Vorsteuerung_Entwurf(sysk,parFF)
+[parFF] = Vorsteuerung_Entwurf(sysk,parFF);
 
 
 

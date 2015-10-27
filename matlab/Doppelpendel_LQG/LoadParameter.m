@@ -6,7 +6,7 @@ warning off
 clc
 
 % Obere oder untere Ruhelage (1-0)
-obere_untere_Ruhelage = 1;
+obere_untere_Ruhelage = 0;
 % Anfangsfehler
 parDP.phi10_error = 0*0.1;
 % Quantisierung ein/aus (1-0)
