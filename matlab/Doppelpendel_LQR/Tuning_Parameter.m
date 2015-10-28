@@ -4,7 +4,7 @@ parKAL.Ta = parDP.Ta;
 
 if obere_untere_Ruhelage==1 %obere
     a1 = 1000;
-    a2 = 1;
+    a2 = 500;
     a3 = 1;
     a4 = 1;
     a5 = 4;
