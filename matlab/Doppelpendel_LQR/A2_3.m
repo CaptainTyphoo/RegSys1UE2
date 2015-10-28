@@ -20,9 +20,9 @@ run LoadParameter
 if(animation_on==1 && simulation==1)
    
     load('statesNL.mat');
-    w1=data(2,:)+pi/2;
-    w2=data(4,:)+pi/2;
-    wagen_pos=data(6,:);
+    w1=data(2,2:end)+pi/2;
+    w2=data(4,2:end)+pi/2;
+    wagen_pos=data(6,2:end);
 
     time=data(1,2)-data(1,1);
     
