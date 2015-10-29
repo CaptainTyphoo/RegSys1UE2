@@ -15,6 +15,15 @@ function [] = Animation( wagen_pos,w1,w2,Ta,trajek,pfad)
 FPS=25;
 video_size=600;
 
+% Lösche NaN Einträge
+del_elements=isnan(w1) | isnan(w2) | isnan(wagen_pos);
+w1(del_elements)=[];
+w2(del_elements)=[];
+wagen_pos(del_elements)=[];
+if(lenght(w1)<2)
+    return
+end
+
 % Input Parameter mittels FPS anpassen (damit "nur" FPS Bilder pro Sekunde)
 if(Ta<(1/FPS))
     shrink=ceil((1/FPS)/Ta);

@@ -8,12 +8,13 @@ clc;
 simulation=1;       % 1 für Simualtion starten
 
 % Animation Einstellungen
-animation_on=1;
-trajektorie_on=0;
-video_on=0;
-pfad='video.avi';
+animation_on=0;       % Animation anzeigen 1=ja, wenn ja dann ->
+trajektorie_on=0;     % Trajektorie anzeigen
+video_on=0;           % Video speichern (ohne Trajektorie)
+pfad='video.avi';     % Dateiname für Video (mit .avi !)
 
-vorst_plotten = 0;  % 1 für Vorsteuerung plottem
+
+vorst_plotten = 0;  % 1 für Vorsteuerung plotten
 
 % Obere oder untere Ruhelage (1-0)
 obere_untere_Ruhelage = 1;
@@ -28,6 +29,7 @@ Beobachter_Rueckfuehrung=1;
 
 %Parameter laden
 run Parameter
+
 %Systeme laden
 [sysk,sysd] = DP_System(parDP);
 %Eigenwerte berechnen
@@ -50,7 +52,6 @@ cc(1,1)=1;
 cc(2,5)=1;
 sysk.c=cc;
 
-
 [parKAL] = Kalman_Entwurf(sysk,sysd,parKAL);
 %Vorsteuerungsentwurf
 [parFF] = Vorsteuerung_Entwurf(sysk,parFF);
@@ -61,9 +62,20 @@ if(vorst_plotten==1)
 end
 
 if(simulation==1)
-    disp('Simulations lÃ¤uft...')
-    open('Doppelpendel_LQG.slx')
-    sim('Doppelpendel_LQG.slx')
+    disp('Simulations läuft...')   
+    
+    if(strfind(version,'2015b'))
+        open('Doppelpendel_LQG_2015b.slx')
+        sim('Doppelpendel_LQG_2015b.slx')
+    elseif(strfind(version,'2015a'))
+        open('Doppelpendel_LQG_2015a.slx')
+        sim('Doppelpendel_LQG_20145a.slx')
+    elseif(strfind(version,'2014b'))
+        open('Doppelpendel_LQG_2014b.slx')
+        sim('Doppelpendel_LQG_2014b.slx')
+    else
+        fprintf('Kein Simulinkmodel für Version '); fprintf(version); fprintf('gefunden!\n');
+    end
 end
 
 %% ANIMATION
