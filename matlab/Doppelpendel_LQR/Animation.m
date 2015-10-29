@@ -20,7 +20,7 @@ del_elements=isnan(w1) | isnan(w2) | isnan(wagen_pos);
 w1(del_elements)=[];
 w2(del_elements)=[];
 wagen_pos(del_elements)=[];
-if(lenght(w1)<2)
+if(length(w1)<2)
     return
 end
 
