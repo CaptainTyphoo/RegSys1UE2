@@ -11,13 +11,13 @@ simulation=1;  %Wenn 1 dann wird Simluation gestartet
 animation_on=0;       % Animation anzeigen 1=ja, wenn ja dann ->
 trajektorie_on=0;     % Trajektorie anzeigen
 video_on=0;           % Video speichern (ohne Trajektorie)
-pfad='video.avi';     % Dateiname für Video (mit .avi !)
+pfad='video.avi';     % Dateiname fï¿½r Video (mit .avi !)
 
 
 % Obere oder untere Ruhelage (1-0)
 obere_untere_Ruhelage = 1;
 % Anfangsfehler
-parDP.phi10_error = 0.1;
+parDP.phi10_error = -0.1;
 % Quantisierung ein/aus (1-0)
 Quantisierung = 1;
 
@@ -40,7 +40,7 @@ run Tuning_Parameter
 [parLQR] = LQR_Entwurf(sysd,parLQR);
 
 if(simulation==1)
-    disp('Simulations läuft...')   
+    disp('Simulations lï¿½uft...')   
     
     if(strfind(version,'2015b'))
         open('Doppelpendel_LQR_2015b.slx')
@@ -52,7 +52,7 @@ if(simulation==1)
         open('Doppelpendel_LQR_2014b.slx')
         sim('Doppelpendel_LQR_2014b.slx')
     else
-        fprintf('Kein Simulinkmodel für Version '); fprintf(version); fprintf('gefunden!\n');
+        fprintf('Kein Simulinkmodel fï¿½r Version '); fprintf(version); fprintf('gefunden!\n');
     end
 end
 

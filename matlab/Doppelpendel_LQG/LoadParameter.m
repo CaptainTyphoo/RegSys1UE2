@@ -5,16 +5,16 @@ clear all;
 warning off;
 clc;
 
-simulation=1;       % 1 für Simualtion starten
+simulation=1;       % 1 fï¿½r Simualtion starten
 
 % Animation Einstellungen
 animation_on=0;       % Animation anzeigen 1=ja, wenn ja dann ->
 trajektorie_on=0;     % Trajektorie anzeigen
 video_on=0;           % Video speichern (ohne Trajektorie)
-pfad='video.avi';     % Dateiname für Video (mit .avi !)
+pfad='video.avi';     % Dateiname fï¿½r Video (mit .avi !)
 
 
-vorst_plotten = 0;  % 1 für Vorsteuerung plotten
+vorst_plotten = 0;  % 1 fï¿½r Vorsteuerung plotten
 
 % Obere oder untere Ruhelage (1-0)
 obere_untere_Ruhelage = 1;
@@ -23,7 +23,7 @@ parDP.phi10_error = 0*0.1;
 % Quantisierung ein/aus (1-0)
 Quantisierung = 0;
 %Kalman-Filter ein/aus (1-2)
-Kalman_Filter = 2;
+Kalman_Filter = 1;
 %Beobachter/Modell  Rï¿½ckfï¿½hrung ein/aus (0-1)
 Beobachter_Rueckfuehrung=1;
 
@@ -62,7 +62,7 @@ if(vorst_plotten==1)
 end
 
 if(simulation==1)
-    disp('Simulations läuft...')   
+    disp('Simulations lï¿½uft...')   
     
     if(strfind(version,'2015b'))
         open('Doppelpendel_LQG_2015b.slx')
@@ -74,7 +74,7 @@ if(simulation==1)
         open('Doppelpendel_LQG_2014b.slx')
         sim('Doppelpendel_LQG_2014b.slx')
     else
-        fprintf('Kein Simulinkmodel für Version '); fprintf(version); fprintf('gefunden!\n');
+        fprintf('Kein Simulinkmodel fï¿½r Version '); fprintf(version); fprintf('gefunden!\n');
     end
 end
 
