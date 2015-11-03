@@ -36,9 +36,9 @@ end
 %% Gewichtung Beobachter
 
     a1 = 1;
-    a2 = 1;
+    a2 = 1000;
     a3 = 1;
-    a4 = 1;
+    a4 = 100;
     Q = diag([a1 a2 a1 a2 a3 a4]);
     
     gamma1 = 1;
